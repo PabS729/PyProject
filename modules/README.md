@@ -20,14 +20,14 @@ All ghosts will move as the pacman moves. If one of the ghosts capture pacman, t
     
 ## Files:
 
-PyProject/
-game.py
-    modules/
-    board.py:
-        pac_character.py
-        direction.py            
-test.py
-pacman.ipynb
+PyProject/ \
+game.py \
+    modules/ \
+    board.py:\
+        pac_character.py\
+        direction.py\            
+test.py\
+pacman.ipynb\
 tests.ipynb
 
 ## File Discription:
