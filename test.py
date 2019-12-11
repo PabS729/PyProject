@@ -2,6 +2,7 @@ from modules.pac_character import PacCharacter
 from modules.board import Board
 from modules.direction import Direction
 
+#Tests pacCharacters
 def test_pacChar():
 
     pacman = PacCharacter(0, 0, 'P')
@@ -48,6 +49,7 @@ def test_pacChar():
     assert ghost.row == 2
     assert ghost.col == 4
 
+#Tests the board for the game
 def test_board():
     board = Board(15)
     left = Direction(-1, 0)

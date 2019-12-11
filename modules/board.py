@@ -7,7 +7,11 @@ stay = Direction(0, 0)
 up = Direction(0, -1)
 down = Direction(0, 1)
 
+#the board for playing the game
 class Board:
+    
+    #pacman initializes at the middle of the grid
+    #ghosts initializes at the four corners of the grid
     def __init__(self, size=10):
         self.GRID_SIZE = size;
         self.grid = []
@@ -40,12 +44,14 @@ class Board:
 
     def get_grid(self):
         return self.grid
-
+    
+    #set the cell to be visited if the pacman has been to the cell before
     def set_visited(self, x, y):
         if x < 0 or y < 0 or x > self.GRID_SIZE or y > self.GRID_SIZE:
             return
         self.visited[x][y] = True
 
+    #updates the status of the board
     def refresh_grid(self):
 
         for i in range(0, self.GRID_SIZE):
@@ -65,6 +71,7 @@ class Board:
                 self.grid[ghost.get_row()][ghost.get_col()] = \
                     ghost.get_appearance();
 
+    #check if the pacman can move in a certain direction
     def can_move(self, direction):
         if direction == None:
             return False
@@ -75,6 +82,7 @@ class Board:
         return pacmanRow >= 0 and pacmanRow < self.GRID_SIZE and \
                pacmanCol >= 0 and pacmanCol < self.GRID_SIZE
 
+    #moves the pacman and the ghosts
     def move(self, direction):
         pacmanRow = self.pacman.get_row() + direction.get_y()
         pacmanCol = self.pacman.get_col() + direction.get_x()
@@ -90,6 +98,7 @@ class Board:
 
         self.refresh_grid()
 
+    #check if the game is over
     def is_game_over(self):
         pacmanRow = self.pacman.get_row();
         pacmanCol = self.pacman.get_col();
@@ -98,6 +107,7 @@ class Board:
                 return True
         return False
 
+    #algorithm for moving the ghost
     def ghost_move(self, ghost):
         pacmanRow = self.pacman.get_row();
         pacmanCol = self.pacman.get_col();
@@ -141,6 +151,7 @@ class Board:
                     ghost.set_position(ghostRow, ghostCol + 1);
                     return right;
 
+    #prints the board on the terminal
     def print_board(self):
         print("score: " + str(self.score) + '\n')
         for lines in self.grid:

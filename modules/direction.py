@@ -1,3 +1,4 @@
+#Global Directions for moving the pacCharacters.
 class Direction:
     def __init__(self, x, y):
         self.x = x

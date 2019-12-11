@@ -1,3 +1,4 @@
+#the template for pacman and ghosts
 class PacCharacter:
     def __init__(self, row, col, appearance):
         self.row = row
