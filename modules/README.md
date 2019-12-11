@@ -25,7 +25,7 @@ game.py \
     modules/ \
     board.py:\
         pac_character.py\
-        direction.py\            
+        direction.py            
 test.py\
 pacman.ipynb\
 tests.ipynb
@@ -53,5 +53,5 @@ modules:
         - Templates work for both pacman and the ghosts.\
     3. direction.py:\
         - Templates for left(-1,0), right(1,0), up(0, -1), down(0,1), and stay(0,0)\
-        - Serve as global directions in the game.\
+        - Serve as global directions in the game.
       
