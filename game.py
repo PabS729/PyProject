@@ -9,6 +9,7 @@ up = Direction(0, -1)
 down = Direction(0, 1)
 
 #the class for playing pacman
+
 class playGame:
 
     #initializes the game
